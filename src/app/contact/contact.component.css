@@ -26,6 +26,7 @@ label {
   transition: 0.6s top;
   display: block;
   color: #1abc9c;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   /* font-weight: 500; */
 }
 .label-transition {
