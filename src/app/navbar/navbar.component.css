@@ -3,7 +3,7 @@
 }
 .navbar {
   transition: padding-block 0.5s ease;
-  height: 110px;
+  height: auto;
   background-color: var(--main-color-nav-footer);
   position: fixed;
   padding-block: 30px;
