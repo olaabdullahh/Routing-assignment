@@ -1,0 +1,145 @@
+<!-- <div class="portfolio mt-5">
+  <div class="container pt-5">
+    <div class="row g-4 my-4">
+      <h2 class="pt-5 text-center fs-1">portfolio component</h2>
+      <div class="d-flex mx-auto justify-content-center align-items-center">
+        <div class="line me-3"></div>
+        <i class="fa-solid fa-star"></i>
+        <div class="line ms-3"></div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" (click)="test(el)">
+          <img
+            #el
+            src="/portfolio/poert1.png"
+            class="card-img-top rounded"
+            alt="poert1"
+          />
+          <div
+            class="layer d-flex rounded align-items-center justify-content-center"
+          >
+            <i class="text-white fa-solid fa-plus fa-6x"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img
+            #el
+            src="/portfolio/port2.png"
+            class="card-img-top rounded"
+            alt="poert2"
+          />
+          <div
+            class="layer d-flex rounded align-items-center justify-content-center"
+          >
+            <i class="text-white fa-solid fa-plus fa-6x"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img
+            #el
+            src="/portfolio/port3.png"
+            class="card-img-top rounded"
+            alt="poert3"
+          />
+          <div
+            class="layer d-flex rounded align-items-center justify-content-center"
+          >
+            <i class="text-white fa-solid fa-plus fa-6x"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img
+            #el
+            src="/portfolio/poert1.png"
+            class="card-img-top rounded"
+            alt="poert1"
+          />
+          <div
+            class="layer d-flex rounded align-items-center justify-content-center"
+          >
+            <i class="text-white fa-solid fa-plus fa-6x"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img
+            #el
+            src="/portfolio/port2.png"
+            class="card-img-top rounded"
+            alt="poert2"
+          />
+          <div
+            class="layer d-flex rounded align-items-center justify-content-center"
+          >
+            <i class="text-white fa-solid fa-plus fa-6x"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img
+            #el
+            src="/portfolio/port3.png"
+            class="card-img-top rounded"
+            alt="poert3"
+          />
+          <div
+            class="layer d-flex rounded align-items-center justify-content-center"
+          >
+            <i class="text-white fa-solid fa-plus fa-6x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- Modal -->
+
+<div class="portfolio mt-5">
+  <div class="container pt-5">
+    <div class="row g-4 my-4">
+      <h2 class="pt-5 text-center fs-1">portfolio component</h2>
+      <div class="d-flex mx-auto justify-content-center align-items-center">
+        <div class="line me-3"></div>
+        <i class="fa-solid fa-star"></i>
+        <div class="line ms-3"></div>
+      </div>
+
+      @for (image of images; track $index) {
+      <div class="col-md-4">
+        <div class="card" (click)="ShowModal(image.src)">
+          <img
+            [src]="image.src"
+            class="card-img-top rounded"
+            [alt]="image.alt"
+          />
+          <div
+            class="layer d-flex rounded align-items-center justify-content-center"
+          >
+            <i class="text-white fa-solid fa-plus fa-6x"></i>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+
+@if(isClicked){
+<div class="modalLayer" (click)="hideModal()">
+  <div class="modalBg">
+    <div class="modalContent">
+      <div class="modalImg">
+        <img class="w-100" [src]="selectedImage" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+}

@@ -1,0 +1,90 @@
+<div class="contact mt-5">
+  <div class="container pt-5">
+    <div class="row g-4 my-4">
+      <h2 class="pt-5 text-center fs-1">conatct section</h2>
+      <div class="d-flex mx-auto justify-content-center align-items-center">
+        <div class="line me-3"></div>
+        <i class="fa-solid fa-star"></i>
+        <div class="line ms-3"></div>
+      </div>
+      <form class="w-75 mx-auto">
+        <div class="floating-label mb-2">
+          <input
+            (input)="ShowLabel('userName', $event)"
+            id="userName"
+            name="userName"
+            type="text"
+            placeholder="userName"
+            class="form-control border-0 border-bottom py-3 position-relative ContactInput"
+          />
+          <label
+            for="userName"
+            [class]="{
+              'label-transition': labelVisibility.userName,
+              'label-visible': !labelVisibility.userName
+            }"
+            >userName:</label
+          >
+        </div>
+        <div class="floating-label mb-2">
+          <input
+            (input)="ShowLabel('userAge', $event)"
+            id="userAge"
+            name="userAge"
+            type="text"
+            placeholder="userAge"
+            class="form-control border-0 border-bottom py-3 position-relative ContactInput"
+          />
+          <label
+            for="userAge"
+            [class]="{
+              'label-transition': true,
+              'label-visible': !labelVisibility.userAge
+            }"
+            >userAge:</label
+          >
+        </div>
+        <div class="floating-label mb-2">
+          <input
+            (input)="ShowLabel('userEmail', $event)"
+            id="userEmail"
+            name="userEmail"
+            type="email"
+            placeholder="userEmail"
+            class="form-control border-0 border-bottom py-3 position-relative ContactInput"
+          />
+          <label
+            for="userEmail"
+            [class]="{
+              'label-transition': true,
+              'label-visible': !labelVisibility.userEmail
+            }"
+            >userEmail :
+          </label>
+        </div>
+        <div class="floating-label mb-2">
+          <input
+            (input)="ShowLabel('userPassword', $event)"
+            id="userPassword"
+            name="userPassword"
+            type="password"
+            placeholder="userPassword"
+            class="form-control border-0 border-bottom py-3 position-relative ContactInput"
+          />
+          <label
+            for="userPassword"
+            [class]="{
+              'label-transition': true,
+              'label-visible': !labelVisibility.userPassword
+            }"
+            >userPassword :
+          </label>
+        </div>
+
+        <button class="send rounded mt-4" (click)="sendMessage($event)">
+          send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
